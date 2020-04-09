@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import in.acesko.springbootcrud.springbootcrudapi.model.KorisnickaDopustenja;
 import in.acesko.springbootcrud.springbootcrudapi.service.KorisnickaDopustenjaService;
@@ -50,6 +52,16 @@ public class KorisnickaDopustenjaController {
 	public KorisnickaDopustenja update(@RequestBody KorisnickaDopustenja korisnickaDopustenjaObj) {
 		 korisnickaDopustenjaService.save(korisnickaDopustenjaObj);
 		return korisnickaDopustenjaObj;
+	}
+	@RequestMapping(value = "/korisnickaDopustenja", method = RequestMethod.GET)
+	public KorisnickaDopustenja firstPage() {
+
+		KorisnickaDopustenja korisnickaDopustenja = new KorisnickaDopustenja();
+		korisnickaDopustenja.setDopustenjaID(1);
+		korisnickaDopustenja.setKorisnickaDopustenjaID(1);
+		korisnickaDopustenja.setUlogaID(1);
+
+		return korisnickaDopustenja;
 	}
 	
 }
