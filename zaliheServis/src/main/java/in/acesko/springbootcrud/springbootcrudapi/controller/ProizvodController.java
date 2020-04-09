@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Proizvod;
@@ -49,6 +50,17 @@ public class ProizvodController {
 	public Proizvod update(@RequestBody Proizvod proizvodObj) {
 		proizvodService.save(proizvodObj);
 		return proizvodObj;
+	}
+	@RequestMapping(value = "/proizvod", method = RequestMethod.GET)
+	public Proizvod firstPage() {
+
+		Proizvod proizvod = new Proizvod();
+		proizvod.setCijena(10.00);
+		proizvod.setNaziv("Proizvod");
+		proizvod.setProizvodID(1);
+		proizvod.setRaspolozivaKolicina(100);
+
+		return proizvod;
 	}
 	
 }
