@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Aktivnosti;
@@ -50,6 +51,17 @@ public class AktivnostiController {
 	public Aktivnosti update(@RequestBody Aktivnosti aktivnostiObj) {
 		aktivnostiService.save(aktivnostiObj);
 		return aktivnostiObj;
+	}
+	@RequestMapping(value = "/aktivnosti", method = RequestMethod.GET)
+	public Aktivnosti firstPage() {
+
+		Aktivnosti aktivnost = new Aktivnosti();
+		aktivnost.setAktivnostiID(1);
+		aktivnost.setMetoda("...");
+		aktivnost.setURL("url");
+		aktivnost.setURLRegex("regex");
+
+		return aktivnost;
 	}
 	
 }
