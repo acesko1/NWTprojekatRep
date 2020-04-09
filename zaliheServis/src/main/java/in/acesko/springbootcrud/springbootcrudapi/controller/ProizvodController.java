@@ -51,16 +51,16 @@ public class ProizvodController {
 		proizvodService.save(proizvodObj);
 		return proizvodObj;
 	}
-	@RequestMapping(value = "/proizvod", method = RequestMethod.GET)
-	public Proizvod firstPage() {
-
-		Proizvod proizvod = new Proizvod();
-		proizvod.setCijena(10.00);
-		proizvod.setNaziv("Proizvod");
-		proizvod.setProizvodID(1);
-		proizvod.setRaspolozivaKolicina(100);
-
-		return proizvod;
-	}
+//	@RequestMapping(value = "/proizvod", method = RequestMethod.GET)
+//	public Proizvod firstPage() {
+//
+//		Proizvod proizvod = new Proizvod();
+//		proizvod.setCijena(10.00);
+//		proizvod.setNaziv("Proizvod");
+//		proizvod.setProizvodID(1);
+//		proizvod.setRaspolozivaKolicina(100);
+//
+//		return proizvod;
+//	}
 	
 }

@@ -51,16 +51,16 @@ public class StavkaProdajeController {
 		stavkaProdajeService.save(stavkaProdajeObj);
 		return stavkaProdajeObj;
 	}
-	@RequestMapping(value = "/stavkaProdaje", method = RequestMethod.GET)
-	public StavkaProdaje firstPage() {
-
-		StavkaProdaje stavkaProdaje = new StavkaProdaje();
-		stavkaProdaje.setKolicina(50);
-		stavkaProdaje.setProizvodID(1);
-		stavkaProdaje.setStavkaProdajeID(1);
-		stavkaProdaje.setUkupnaCijena(500.00);
-
-		return stavkaProdaje;
-	}
+//	@RequestMapping(value = "/stavkaProdaje", method = RequestMethod.GET)
+//	public StavkaProdaje firstPage() {
+//
+//		StavkaProdaje stavkaProdaje = new StavkaProdaje();
+//		stavkaProdaje.setKolicina(50);
+//		stavkaProdaje.setProizvodID(1);
+//		stavkaProdaje.setStavkaProdajeID(1);
+//		stavkaProdaje.setUkupnaCijena(500.00);
+//
+//		return stavkaProdaje;
+//	}
 	
 }
