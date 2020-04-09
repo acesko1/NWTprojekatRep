@@ -48,6 +48,7 @@ public class StavkaProdajeController {
 	}
 	@PutMapping("/stavkaProdaje")
 	public StavkaProdaje update(@RequestBody StavkaProdaje stavkaProdajeObj) {
+
 		stavkaProdajeService.save(stavkaProdajeObj);
 		return stavkaProdajeObj;
 	}
