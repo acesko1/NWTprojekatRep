@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Dopustenja;
+
 import in.acesko.springbootcrud.springbootcrudapi.service.DopustenjaService;
 
 @RestController
@@ -49,6 +51,16 @@ public class DopustenjaController {
 	public Dopustenja update(@RequestBody Dopustenja dopustenjaObj) {
 		dopustenjaService.save(dopustenjaObj);
 		return dopustenjaObj;
+	}
+	@RequestMapping(value = "/dopustenja", method = RequestMethod.GET)
+	public Dopustenja firstPage() {
+
+		Dopustenja dopustenja = new Dopustenja();
+		dopustenja.setAzuriranaU(null);
+		dopustenja.setKreiranaU(null);
+		dopustenja.setDopustenjaID(1);
+		dopustenja.setNaziv("Naziv dopustenja");
+		return dopustenja;
 	}
 	
 }
