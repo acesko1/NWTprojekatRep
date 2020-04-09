@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.StavkaProdaje;
@@ -49,6 +50,17 @@ public class StavkaProdajeController {
 	public StavkaProdaje update(@RequestBody StavkaProdaje stavkaProdajeObj) {
 		stavkaProdajeService.save(stavkaProdajeObj);
 		return stavkaProdajeObj;
+	}
+	@RequestMapping(value = "/stavkaProdaje", method = RequestMethod.GET)
+	public StavkaProdaje firstPage() {
+
+		StavkaProdaje stavkaProdaje = new StavkaProdaje();
+		stavkaProdaje.setKolicina(50);
+		stavkaProdaje.setProizvodID(1);
+		stavkaProdaje.setStavkaProdajeID(1);
+		stavkaProdaje.setUkupnaCijena(500.00);
+
+		return stavkaProdaje;
 	}
 	
 }
