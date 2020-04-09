@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.AktivnostiDopustenja;
@@ -50,6 +51,16 @@ public class AktivnostiDopustenjaController {
 	public AktivnostiDopustenja update(@RequestBody AktivnostiDopustenja aktivnostiDopustenjaObj) {
 		aktivnostiDopustenjaService.save(aktivnostiDopustenjaObj);
 		return aktivnostiDopustenjaObj;
+	}
+	@RequestMapping(value = "/aktivnostiDopustenja", method = RequestMethod.GET)
+	public AktivnostiDopustenja firstPage() {
+
+		AktivnostiDopustenja aktivnostiDopustenja = new AktivnostiDopustenja();
+		aktivnostiDopustenja.setAktivnostiDopustenjaID(1);
+		aktivnostiDopustenja.setAktivnostiID(1);
+		aktivnostiDopustenja.setDopustenjaID(1);
+
+		return aktivnostiDopustenja;
 	}
 	
 }
