@@ -1,0 +1,119 @@
+-- Table: public."ServisZaliha"
+
+-- DROP TABLE public."ServisZaliha";
+
+CREATE TABLE public."ServisZaliha"
+(
+    "ProizvodID" integer NOT NULL,
+    "Naziv" text COLLATE pg_catalog."default" NOT NULL,
+    "Opis" text COLLATE pg_catalog."default",
+    "Cijena" real NOT NULL,
+    "Količina" integer NOT NULL,
+    CONSTRAINT "ServisZaliha_pkey" PRIMARY KEY ("ProizvodID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."ServisZaliha"
+    OWNER to postgres;
+    
+    
+    
+    -- Table: public."Feedback Servis"
+
+-- DROP TABLE public."Feedback Servis";
+
+CREATE TABLE public."Feedback Servis"
+(
+    "FeedbackID" integer NOT NULL,
+    "KorisnikID" integer,
+    "NaplataID" integer,
+    "Ocjena" text COLLATE pg_catalog."default",
+    "Opis" text COLLATE pg_catalog."default",
+    CONSTRAINT "Feedback Servis_pkey" PRIMARY KEY ("FeedbackID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."Feedback Servis"
+    OWNER to postgres;
+    
+    
+    
+    
+    
+    -- Table: public."Korisnički servis"
+
+-- DROP TABLE public."Korisnički servis";
+
+CREATE TABLE public."Korisnički servis"
+(
+    "Godine" integer,
+    "Ime" text COLLATE pg_catalog."default" NOT NULL,
+    "KorisnikID" integer NOT NULL,
+    "Prezime" text COLLATE pg_catalog."default",
+    "Adresa" text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Korisnički servis_pkey" PRIMARY KEY ("KorisnikID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."Korisnički servis"
+    OWNER to postgres;
+    
+    
+    
+    
+    -- Table: public."Servis za naplatu"
+
+-- DROP TABLE public."Servis za naplatu";
+
+CREATE TABLE public."Servis za naplatu"
+(
+    "NaplataID" integer NOT NULL,
+    "KorisnikID" integer NOT NULL,
+    "ProizvodID" integer NOT NULL,
+    "Opis" text COLLATE pg_catalog."default",
+    "Nacin isplate" text COLLATE pg_catalog."default",
+    "Adresa" text COLLATE pg_catalog."default",
+    CONSTRAINT "Servis za naplatu_pkey" PRIMARY KEY ("NaplataID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."Servis za naplatu"
+    OWNER to postgres;
+    
+    
+    
+    
+    
+    - Table: public."ServisZaliha"
+
+-- DROP TABLE public."ServisZaliha";
+
+CREATE TABLE public."ServisZaliha"
+(
+    "ProizvodID" integer NOT NULL,
+    "Naziv" text COLLATE pg_catalog."default" NOT NULL,
+    "Opis" text COLLATE pg_catalog."default",
+    "Cijena" real NOT NULL,
+    "Količina" integer NOT NULL,
+    CONSTRAINT "ServisZaliha_pkey" PRIMARY KEY ("ProizvodID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."ServisZaliha"
+    OWNER to postgres;
+    
