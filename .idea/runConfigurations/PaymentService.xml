@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PaymentService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false">
+    <module name="PaymentService" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.nwt.witcher.paymentapp.PaymentServiceApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

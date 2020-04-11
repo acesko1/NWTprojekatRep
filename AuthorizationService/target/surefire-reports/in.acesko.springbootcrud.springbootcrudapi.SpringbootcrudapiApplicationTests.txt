@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: in.acesko.springbootcrud.springbootcrudapi.SpringbootcrudapiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.915 s <<< FAILURE! - in in.acesko.springbootcrud.springbootcrudapi.SpringbootcrudapiApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'aktivnostiController' method 
+in.acesko.springbootcrud.springbootcrudapi.controller.AktivnostiController#firstPage()
+to {GET /api/aktivnosti}: There is already 'aktivnostiController' bean method
+in.acesko.springbootcrud.springbootcrudapi.controller.AktivnostiController#get() mapped.
+Caused by: java.lang.IllegalStateException: 
+Ambiguous mapping. Cannot map 'aktivnostiController' method 
+in.acesko.springbootcrud.springbootcrudapi.controller.AktivnostiController#firstPage()
+to {GET /api/aktivnosti}: There is already 'aktivnostiController' bean method
+in.acesko.springbootcrud.springbootcrudapi.controller.AktivnostiController#get() mapped.
+
