@@ -18,25 +18,45 @@ public class ActivityServiceImpl implements ActivityService {
     @Transactional
     @Override
     public List<Activity> get() {
-        return activityRepository.findAll();
+        try {
+            return activityRepository.findAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public Activity get(int id) {
-        return activityRepository.getOne(id);
+        try {
+            return activityRepository.getOne(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(Activity activity) {
-        activityRepository.save(activity);
+        try {
+            activityRepository.save(activity);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        activityRepository.deleteById(id);
+        try {
+            activityRepository.deleteById(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
 }

@@ -23,25 +23,45 @@ public class RolePermissionServiceImpl implements RolePermissionService {
     @Transactional
     @Override
     public List<RolePermission> get() {
-        return rolePermissionRepository.findAll();
+        try {
+            return rolePermissionRepository.findAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public RolePermission get(int id) {
-        return rolePermissionRepository.getOne(id);
+        try {
+            return rolePermissionRepository.getOne(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(RolePermission rolePermission) {
-        rolePermissionRepository.save(rolePermission);
+        try {
+            rolePermissionRepository.save(rolePermission);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        rolePermissionRepository.deleteById(id);
+        try {
+            rolePermissionRepository.deleteById(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
@@ -56,6 +76,7 @@ public class RolePermissionServiceImpl implements RolePermissionService {
             rolePermission.setRole(role);
             rolePermission.setRoleId(roleId);
         } catch (Exception e) {
+            e.printStackTrace();
             throw e;
         }
     }

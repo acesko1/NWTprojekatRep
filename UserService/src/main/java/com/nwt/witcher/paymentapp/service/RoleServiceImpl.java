@@ -18,25 +18,45 @@ public class RoleServiceImpl implements RoleService {
     @Transactional
     @Override
     public List<Role> get() {
-        return roleRepository.findAll();
+        try {
+            return roleRepository.findAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public Role get(int id) {
-        return roleRepository.getOne(id);
+        try {
+            return roleRepository.getOne(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(Role role) {
-        roleRepository.save(role);
+        try {
+            roleRepository.save(role);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        roleRepository.deleteById(id);
+        try {
+            roleRepository.deleteById(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
 }

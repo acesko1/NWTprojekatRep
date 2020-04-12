@@ -2,6 +2,7 @@ package com.nwt.witcher.paymentapp.controller;
 
 import java.util.List;
 
+import com.nwt.witcher.paymentapp.model.User;
 import com.nwt.witcher.paymentapp.service.RolePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,35 +28,53 @@ public class RoleController {
     private RolePermissionService rolePermissionService;
 
     @GetMapping("/role")
-    public List<Role> get() {
-        return roleService.get();
+    public ResponseEntity<?> get() {
+        try {
+            List<Role> roles = roleService.get();
+            return ResponseEntity.ok(roles);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PostMapping("/role")
-    public Role save(@RequestBody Role roleObj) {
-        roleService.save(roleObj);
-        return roleObj;
+    public ResponseEntity<?> save(@RequestBody Role role) {
+        try {
+            roleService.save(role);
+            return ResponseEntity.ok(role);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @GetMapping("/role/{id}")
-    public Role get(@PathVariable int id) {
-        Role roleObj = roleService.get(id);
-        if (roleObj == null) {
-            throw new RuntimeException("Rola sa id-om:" + id + "nije pronađena");
+    public ResponseEntity<?> get(@PathVariable int id) {
+        try {
+            Role role = roleService.get(id);
+            return ResponseEntity.ok(role);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
         }
-        return roleObj;
     }
 
     @DeleteMapping("/role/{id}")
-    public String delete(@PathVariable int id) {
-        roleService.delete(id);
-        return "Rola je obrisana sa id-om:" + id;
+    public ResponseEntity<String> delete(@PathVariable Integer id) {
+        try {
+            roleService.delete(id);
+            return ResponseEntity.ok("Role with id " + id.toString() + " successfully deleted.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PutMapping("/role")
-    public Role update(@RequestBody Role roleObj) {
-        roleService.save(roleObj);
-        return roleObj;
+    public ResponseEntity<?> update(@RequestBody Role role) {
+        try {
+            roleService.save(role);
+            return ResponseEntity.ok(role);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PostMapping("/role/{roleId}/permission/{permissionId}")
@@ -67,17 +86,6 @@ public class RoleController {
             return ResponseEntity.badRequest().body(e.toString());
         }
     }
-//	@RequestMapping(value = "/role", method = RequestMethod.GET)
-//	public Role firstPage() {
-//
-//		Role role = new Role();
-//		role.setAzuriranaU(null);
-//		role.setKreiranaU(null);
-//		role.setNazivRole("Premium korisnik");
-//		role.setRolaID(1);
-//
-//		return role;
-//	}
 
 
 }

@@ -18,25 +18,45 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public List<User> get() {
-        return userRepository.findAll();
+        try{
+            return userRepository.findAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public User get(int id) {
-        return userRepository.getOne(id);
+        try{
+            return userRepository.getOne(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(User user) {
-        userRepository.save(user);
+        try {
+            userRepository.save(user);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        userRepository.deleteById(id);
+        try {
+            userRepository.deleteById(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
 }

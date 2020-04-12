@@ -26,25 +26,45 @@ public class UserRoleServiceImpl implements UserRoleService {
     @Transactional
     @Override
     public List<UserRole> get() {
-        return userRoleRepository.findAll();
+        try {
+            return userRoleRepository.findAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public UserRole get(int id) {
-        return userRoleRepository.getOne(id);
+        try {
+            return userRoleRepository.getOne(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(UserRole userRole) {
-        userRoleRepository.save(userRole);
+        try {
+            userRoleRepository.save(userRole);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        userRoleRepository.deleteById(id);
+        try {
+            userRoleRepository.deleteById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
@@ -62,6 +82,7 @@ public class UserRoleServiceImpl implements UserRoleService {
             userRoleRepository.save(userRole);
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw e;
         }
     }

@@ -18,25 +18,46 @@ public class PermissionServiceImpl implements PermissionService {
     @Transactional
     @Override
     public List<Permission> get() {
-        return permissionRepository.findAll();
+        try {
+            return permissionRepository.findAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+
     }
 
     @Transactional
     @Override
     public Permission get(int id) {
-        return permissionRepository.getOne(id);
+        try {
+            return permissionRepository.getOne(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(Permission permission) {
-        permissionRepository.save(permission);
+        try {
+            permissionRepository.save(permission);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        permissionRepository.deleteById(id);
+        try {
+            permissionRepository.deleteById(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
 }

@@ -18,25 +18,46 @@ public class ActivityPermissionServiceImpl implements ActivityPermissionService 
     @Transactional
     @Override
     public List<ActivityPermission> get() {
-        return activityPermissionRepository.findAll();
+        try {
+            return activityPermissionRepository.findAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+
     }
 
     @Transactional
     @Override
     public ActivityPermission get(int id) {
-        return activityPermissionRepository.getOne(id);
+        try {
+            return activityPermissionRepository.getOne(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void save(ActivityPermission activityPermission) {
-        activityPermissionRepository.save(activityPermission);
+        try {
+            activityPermissionRepository.save(activityPermission);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Transactional
     @Override
     public void delete(int id) {
-        activityPermissionRepository.deleteById(id);
+        try {
+            activityPermissionRepository.deleteById(id);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
 }

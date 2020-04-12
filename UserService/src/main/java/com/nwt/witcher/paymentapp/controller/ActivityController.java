@@ -3,6 +3,7 @@ package com.nwt.witcher.paymentapp.controller;
 
 import java.util.List;
 
+import com.nwt.witcher.paymentapp.model.Permission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,48 +26,52 @@ public class ActivityController {
     private ActivityService activityService;
 
     @GetMapping("/activity")
-    public List<Activity> get() {
-
-        return activityService.get();
+    public ResponseEntity<?> get() {
+        try {
+            List<Activity> activities = activityService.get();
+            return ResponseEntity.ok(activities);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PostMapping("/activity")
-    public Activity save(@RequestBody Activity activity) {
-        activityService.save(activity);
-        return activity;
+    public ResponseEntity<?> save(@RequestBody Activity activity) {
+        try {
+            activityService.save(activity);
+            return ResponseEntity.ok(activity);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @GetMapping("/activity/{id}")
-    public Activity get(@PathVariable int id) {
-        Activity activity = activityService.get(id);
-        if (activity == null) {
-            throw new RuntimeException("Aktivnost sa id-om:" + id + "nije pronađena");
+    public ResponseEntity<?> get(@PathVariable int id) {
+        try {
+            Activity activity = activityService.get(id);
+            return ResponseEntity.ok(activity);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
         }
-        return activity;
     }
 
     @DeleteMapping("/activity/{id}")
-    public String delete(@PathVariable int id) {
-        activityService.delete(id);
-        return "Aktivnost je obrisana sa id-om:" + id;
+    public ResponseEntity<String> delete(@PathVariable Integer id) {
+        try {
+            activityService.delete(id);
+            return ResponseEntity.ok("Activity with id " + id.toString() + " successfully deleted.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PutMapping("/activity")
-    public Activity update(@RequestBody Activity activity) {
-        activityService.save(activity);
-        return activity;
+    public ResponseEntity<?> update(@RequestBody Activity activity) {
+        try {
+            activityService.save(activity);
+            return ResponseEntity.ok(activity);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
-
-//	@RequestMapping(value = "/activity", method = RequestMethod.GET)
-//	public Aktivnosti firstPage() {
-//
-//		Aktivnosti aktivnost = new Aktivnosti();
-//		aktivnost.setAktivnostiID(1);
-//		aktivnost.setMetoda("...");
-//		aktivnost.setURL("url");
-//		aktivnost.setURLRegex("regex");
-//
-//		return aktivnost;
-//	}
-
 }

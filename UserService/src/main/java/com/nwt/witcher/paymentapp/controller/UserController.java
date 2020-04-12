@@ -29,35 +29,53 @@ public class UserController {
     private UserRoleService userRoleService;
 
     @GetMapping("/user")
-    public List<User> get() {
-        return userService.get();
+    public ResponseEntity<?> get() {
+        try {
+            List<User> users = userService.get();
+            return ResponseEntity.ok(users);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PostMapping("/user")
-    public User save(@RequestBody User user) {
-        userService.save(user);
-        return user;
+    public ResponseEntity<?> save(@RequestBody User user) {
+        try {
+            userService.save(user);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @GetMapping("/user/{id}")
-    public User get(@PathVariable int id) {
-        User userObj = userService.get(id);
-        if (userObj == null) {
-            throw new RuntimeException("Korisnik sa id-om:" + id + "nije pronađen");
+    public ResponseEntity<?>  get(@PathVariable int id) {
+        try {
+            User user = userService.get(id);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
         }
-        return userObj;
     }
 
     @DeleteMapping("/user/{id}")
-    public String delete(@PathVariable int id) {
-        userService.delete(id);
-        return "Korisnik je obrisan sa id-om:" + id;
+    public ResponseEntity<String> delete(@PathVariable Integer id) {
+        try {
+            userService.delete(id);
+            return ResponseEntity.ok("User with id " + id.toString() + " successfully deleted");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PutMapping("/user")
-    public User update(@RequestBody User user) {
-        userService.save(user);
-        return user;
+    public ResponseEntity<?> update(@RequestBody User user) {
+        try {
+            userService.save(user);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.toString());
+        }
     }
 
     @PostMapping("/user/{userId}/role/{roleId}")
@@ -69,19 +87,4 @@ public class UserController {
             return ResponseEntity.badRequest().body(e.toString());
         }
     }
-
-//	@RequestMapping(value = "/korisnik", method = RequestMethod.GET)
-//	public Korisnik firstPage() {
-//
-//		Korisnik kor = new Korisnik();
-//		kor.setKorisnikID(1);
-//		kor.setBrojKartice("12345678");
-//		kor.setGodine(20);
-//		kor.setIme("Ime");
-//		kor.setPrezime("Prezime");
-//
-//		return kor;
-//	}
-
-
 }
