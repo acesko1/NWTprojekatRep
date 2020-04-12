@@ -7,7 +7,7 @@ public class ResponseTemplate<T> {
     private Date timestamp;
     private T item;
 
-    public ResponseTemplate(T item){
+    public ResponseTemplate(T item) {
         this.item = item;
     }
 }

@@ -15,7 +15,7 @@ public class PaymentTypeController {
     private PaymentTypeService paymentTypeService;
 
     @GetMapping("/payment-type")
-    public List<PaymentType> get(){
+    public List<PaymentType> get() {
         return paymentTypeService.get();
     }
 
@@ -28,16 +28,18 @@ public class PaymentTypeController {
     @GetMapping("/payment-type/{id}")
     public PaymentType get(@PathVariable int id) {
         PaymentType paymentType = paymentTypeService.get(id);
-        if(paymentType == null) {
-            throw new RuntimeException("Naplata sa id-om:"+id+"nije pronađena");
+        if (paymentType == null) {
+            throw new RuntimeException("Naplata sa id-om:" + id + "nije pronađena");
         }
         return paymentType;
     }
+
     @DeleteMapping("/payment-type/{id}")
     public String delete(@PathVariable int id) {
         paymentTypeService.delete(id);
-        return "Naplata je obrisana sa id-om:"+id;
+        return "Naplata je obrisana sa id-om:" + id;
     }
+
     @PutMapping("/payment-type")
     public PaymentType update(@RequestBody PaymentType paymentType) {
         paymentTypeService.save(paymentType);

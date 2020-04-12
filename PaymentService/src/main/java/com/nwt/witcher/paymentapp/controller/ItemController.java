@@ -16,10 +16,10 @@ public class ItemController {
     private ItemService itemService;
 
     @GetMapping("/item/cart/{id}")
-    public List<Item> getByCart(@PathVariable int id){
+    public List<Item> getByCart(@PathVariable int id) {
         return itemService.getByCart(id);
     }
-    
+
 
     @PostMapping("/item")
     public Item save(@RequestBody Item item) {
@@ -30,16 +30,18 @@ public class ItemController {
     @GetMapping("/item/{id}")
     public Item get(@PathVariable int id) {
         Item item = itemService.get(id);
-        if(item == null) {
-            throw new RuntimeException("Naplata sa id-om:"+id+"nije pronađena");
+        if (item == null) {
+            throw new RuntimeException("Naplata sa id-om:" + id + "nije pronađena");
         }
         return item;
     }
+
     @DeleteMapping("/item/{id}")
     public String delete(@PathVariable int id) {
         itemService.delete(id);
-        return "Naplata je obrisana sa id-om:"+id;
+        return "Naplata je obrisana sa id-om:" + id;
     }
+
     @PutMapping("/item")
     public Item update(@RequestBody Item item) {
         itemService.save(item);

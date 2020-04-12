@@ -7,85 +7,85 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="products")
+@Table(name = "products")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class Product {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	private Integer productId;
+    private Integer productId;
 
-	private String name;
+    private String name;
 
-	private Double price;
+    private Double price;
 
-	private Integer availableAmount;
+    private Integer availableAmount;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date created;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updated;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updated;
 
 
+    public Integer getProductId() {
+        return productId;
+    }
 
-	public Integer getProductId() {
-		return productId;
-	}
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
 
-	public void setProductId(Integer productId) {
-		this.productId = productId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Double getPrice() {
+        return price;
+    }
 
-	public Double getPrice() {
-		return price;
-	}
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
-	public void setPrice(Double price) {
-		this.price = price;
-	}
+    public Integer getAvailableAmount() {
+        return availableAmount;
+    }
 
-	public Integer getAvailableAmount() {
-		return availableAmount;
-	}
+    public void setAvailableAmount(Integer availableAmount) {
+        this.availableAmount = availableAmount;
+    }
 
-	public void setAvailableAmount(Integer availableAmount) {
-		this.availableAmount = availableAmount;
-	}
+    @Override
+    public String toString() {
+        return "Proizvod [ProizvodID=" + productId + ", Naziv=" + name + ", Cijena=" + price
+                + ", RaspolozivaKolicina=" + availableAmount + "]";
+    }
 
-	@Override
-	public String toString() {
-		return "Proizvod [ProizvodID=" + productId + ", Naziv=" + name + ", Cijena=" + price
-				+ ", RaspolozivaKolicina=" + availableAmount + "]";
-	}
+    @PrePersist
+    protected void onCreate() {
+        created = new Date();
+    }
 
-	@PrePersist
-	protected void onCreate() {
-		created = new Date();
-	}
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
+    }
 
-	@PreUpdate
-	protected void onUpdate() {
-		updated = new Date();
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
-
-	public Date getUpdated() {
-		return updated;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
 }

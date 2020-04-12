@@ -1,6 +1,7 @@
 package com.nwt.witcher.paymentapp.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,38 +20,40 @@ import com.nwt.witcher.paymentapp.service.PermissionService;
 @RequestMapping("/api")
 public class PermissionController {
 
-	@Autowired
-	private PermissionService permissionService;
-	
-	@GetMapping("/permission")
-	public List<Permission> get(){
-		return permissionService.get();
-	}
-	
-	@PostMapping("/permission")	
-	public Permission save(@RequestBody Permission permission) {
-		permissionService.save(permission);
-		return permission;
-	}
-	
-	@GetMapping("/permission/{id}")
-	public Permission get(@PathVariable int id) {
-		Permission permission = permissionService.get(id);
-		if(permission == null) {
-			throw new RuntimeException("Dopuštenja sa id-om:"+id+"nisu pronađena");
-		}
-		return permission;
-	}
-	@DeleteMapping("/permission/{id}")
-	public String delete(@PathVariable int id) {
-		permissionService.delete(id);
-		return "Dopuštenja su obrisana sa id-om:"+id;
-	}
-	@PutMapping("/permission")
-	public Permission update(@RequestBody Permission permission) {
-		permissionService.save(permission);
-		return permission;
-	}
+    @Autowired
+    private PermissionService permissionService;
+
+    @GetMapping("/permission")
+    public List<Permission> get() {
+        return permissionService.get();
+    }
+
+    @PostMapping("/permission")
+    public Permission save(@RequestBody Permission permission) {
+        permissionService.save(permission);
+        return permission;
+    }
+
+    @GetMapping("/permission/{id}")
+    public Permission get(@PathVariable int id) {
+        Permission permission = permissionService.get(id);
+        if (permission == null) {
+            throw new RuntimeException("Dopuštenja sa id-om:" + id + "nisu pronađena");
+        }
+        return permission;
+    }
+
+    @DeleteMapping("/permission/{id}")
+    public String delete(@PathVariable int id) {
+        permissionService.delete(id);
+        return "Dopuštenja su obrisana sa id-om:" + id;
+    }
+
+    @PutMapping("/permission")
+    public Permission update(@RequestBody Permission permission) {
+        permissionService.save(permission);
+        return permission;
+    }
 //	@RequestMapping(value = "/permission", method = RequestMethod.GET)
 //	public Dopustenja firstPage() {
 //
@@ -61,5 +64,5 @@ public class PermissionController {
 //		permission.setNaziv("Naziv permission");
 //		return permission;
 //	}
-	
+
 }

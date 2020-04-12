@@ -10,12 +10,13 @@ import java.util.UUID;
 @Entity
 @Table(name = "payment_types")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class PaymentType {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer paymentTypeId;
 
     @Column(unique = true)
@@ -39,7 +40,7 @@ public class PaymentType {
         updated = new Date();
     }
 
-    public PaymentType(){
+    public PaymentType() {
 
     }
 

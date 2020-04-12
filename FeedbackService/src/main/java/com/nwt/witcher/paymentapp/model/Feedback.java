@@ -7,88 +7,89 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="feedbacks")
+@Table(name = "feedbacks")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class Feedback {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer feedbackId;
-	
-	private Integer userId;
-	
-	private Integer paymentCode;
-	
-	private Integer rating;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer feedbackId;
 
-	private String comment;
+    private Integer userId;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date created;
+    private Integer paymentCode;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updated;
+    private Integer rating;
 
-	@PrePersist
-	protected void onCreate() {
-		created = new Date();
-	}
+    private String comment;
 
-	@PreUpdate
-	protected void onUpdate() {
-		updated = new Date();
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
-	public Feedback() {
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updated;
 
-	public Integer getFeedbackId() {
-		return feedbackId;
-	}
+    @PrePersist
+    protected void onCreate() {
+        created = new Date();
+    }
 
-	public void setFeedbackId(Integer feedbackId) {
-		this.feedbackId = feedbackId;
-	}
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
+    }
 
-	public Integer getUserId() {
-		return userId;
-	}
+    public Feedback() {
+    }
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
+    public Integer getFeedbackId() {
+        return feedbackId;
+    }
 
-	public Integer getRating() {
-		return rating;
-	}
+    public void setFeedbackId(Integer feedbackId) {
+        this.feedbackId = feedbackId;
+    }
 
-	public void setRating(Integer rating) {
-		this.rating = rating;
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public String getComment() {
-		return comment;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
+    public Integer getRating() {
+        return rating;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
 
-	public Date getUpdated() {
-		return updated;
-	}
+    public String getComment() {
+        return comment;
+    }
 
-	public Integer getPaymentCode() {
-		return paymentCode;
-	}
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
-	public void setPaymentCode(Integer paymentCode) {
-		this.paymentCode = paymentCode;
-	}
+    public Date getCreated() {
+        return created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public Integer getPaymentCode() {
+        return paymentCode;
+    }
+
+    public void setPaymentCode(Integer paymentCode) {
+        this.paymentCode = paymentCode;
+    }
 }

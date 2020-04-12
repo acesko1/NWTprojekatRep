@@ -10,24 +10,25 @@ import java.util.UUID;
 @Entity
 @Table(name = "payments")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class Payment {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer paymentId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer paymentId;
 
-	private String code;
+    private String code;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date created;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updated;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updated;
 
-	private String userCode;
+    private String userCode;
 
 //  Ovo mozda ne treba
 //	@ManyToOne(fetch = FetchType.EAGER,targetEntity = PaymentType.class)
@@ -37,47 +38,47 @@ public class Payment {
 //	@Column(name = "payment_type_id",insertable = false, updatable = false)
 //	private Integer paymentTypeId;
 
-	@ManyToOne(fetch = FetchType.EAGER,targetEntity = PaymentMethod.class)
-	@JoinColumn(name = "payment_method_id")
-	private PaymentMethod paymentMethod;
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = PaymentMethod.class)
+    @JoinColumn(name = "payment_method_id")
+    private PaymentMethod paymentMethod;
 
-	@Column(name = "payment_method_id",insertable = false, updatable = false)
-	private Integer paymentMethodId;
+    @Column(name = "payment_method_id", insertable = false, updatable = false)
+    private Integer paymentMethodId;
 
-	@PrePersist
-	protected void onCreate() {
-		created = new Date();
-		code = UUID.randomUUID().toString();
-	}
+    @PrePersist
+    protected void onCreate() {
+        created = new Date();
+        code = UUID.randomUUID().toString();
+    }
 
-	@PreUpdate
-	protected void onUpdate() {
-		updated = new Date();
-	}
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
+    }
 
-	public Payment(){
+    public Payment() {
 
-	}
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public Date getUpdated() {
-		return updated;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public String getUserCode() {
-		return userCode;
-	}
+    public String getUserCode() {
+        return userCode;
+    }
 
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
 
 //	public PaymentType getPaymentType() {
 //		return paymentType;
@@ -95,19 +96,19 @@ public class Payment {
 //		this.paymentTypeId = paymentTypeId;
 //	}
 
-	public PaymentMethod getPaymentMethod() {
-		return paymentMethod;
-	}
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
 
-	public void setPaymentMethod(PaymentMethod paymentMethod) {
-		this.paymentMethod = paymentMethod;
-	}
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
 
-	public Integer getPaymentMethodId() {
-		return paymentMethodId;
-	}
+    public Integer getPaymentMethodId() {
+        return paymentMethodId;
+    }
 
-	public void setPaymentMethodId(Integer paymentMethodId) {
-		this.paymentMethodId = paymentMethodId;
-	}
+    public void setPaymentMethodId(Integer paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
+    }
 }

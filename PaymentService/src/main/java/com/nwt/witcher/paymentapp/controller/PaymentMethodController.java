@@ -12,37 +12,39 @@ import java.util.List;
 @RequestMapping("/api")
 public class PaymentMethodController {
 
-        @Autowired
-        private PaymentMethodService paymentMethodService;
+    @Autowired
+    private PaymentMethodService paymentMethodService;
 
-        @GetMapping("/payment-method/type/{id}")
-        public List<PaymentMethod> getByType(@PathVariable int id){
-            return paymentMethodService.getByType(id);
-        }
+    @GetMapping("/payment-method/type/{id}")
+    public List<PaymentMethod> getByType(@PathVariable int id) {
+        return paymentMethodService.getByType(id);
+    }
 
-        @PostMapping("/payment-method")
-        public PaymentMethod save(@RequestBody PaymentMethod paymentMethod) {
-            paymentMethodService.save(paymentMethod);
-            return paymentMethod;
-        }
+    @PostMapping("/payment-method")
+    public PaymentMethod save(@RequestBody PaymentMethod paymentMethod) {
+        paymentMethodService.save(paymentMethod);
+        return paymentMethod;
+    }
 
-        @GetMapping("/payment-method/{id}")
-        public PaymentMethod get(@PathVariable int id) {
-            PaymentMethod paymentMethod = paymentMethodService.get(id);
-            if(paymentMethod == null) {
-                throw new RuntimeException("Naplata sa id-om:"+id+"nije pronađena");
-            }
-            return paymentMethod;
+    @GetMapping("/payment-method/{id}")
+    public PaymentMethod get(@PathVariable int id) {
+        PaymentMethod paymentMethod = paymentMethodService.get(id);
+        if (paymentMethod == null) {
+            throw new RuntimeException("Naplata sa id-om:" + id + "nije pronađena");
         }
-        @DeleteMapping("/payment-method/{id}")
-        public String delete(@PathVariable int id) {
-            paymentMethodService.delete(id);
-            return "Naplata je obrisana sa id-om:"+id;
-        }
-        @PutMapping("/payment-method")
-        public PaymentMethod update(@RequestBody PaymentMethod paymentMethod) {
-            paymentMethodService.save(paymentMethod);
-            return paymentMethod;
-        }
+        return paymentMethod;
+    }
+
+    @DeleteMapping("/payment-method/{id}")
+    public String delete(@PathVariable int id) {
+        paymentMethodService.delete(id);
+        return "Naplata je obrisana sa id-om:" + id;
+    }
+
+    @PutMapping("/payment-method")
+    public PaymentMethod update(@RequestBody PaymentMethod paymentMethod) {
+        paymentMethodService.save(paymentMethod);
+        return paymentMethod;
+    }
 
 }

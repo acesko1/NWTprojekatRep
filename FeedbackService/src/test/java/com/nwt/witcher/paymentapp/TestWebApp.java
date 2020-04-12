@@ -1,4 +1,5 @@
 package com.nwt.witcher.paymentapp;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -13,24 +14,24 @@ import org.springframework.web.context.WebApplicationContext;
 
 public class TestWebApp extends FeedbackServiceApplicationTests {
 
-	@Autowired
-	private WebApplicationContext webApplicationContext;
+    @Autowired
+    private WebApplicationContext webApplicationContext;
 
-	private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-	@Before
-	public void setup() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-	}
+    @Before
+    public void setup() {
+        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    }
 
-	@Test
-	public void testFeedback() throws Exception {
-		mockMvc.perform(get("/feedback")).andExpect(status().isOk())
-				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andExpect(jsonPath("$.FeedbackID").value(1)).andExpect(jsonPath("$.KorisnikID").value(1))
-				.andExpect(jsonPath("$.NaplataID").value(2)).andExpect(jsonPath("$.Ocjena").value(5))
-				.andExpect(jsonPath("$.Komentar").value("Zadovoljan korisnik"));
+    @Test
+    public void testFeedback() throws Exception {
+        mockMvc.perform(get("/feedback")).andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(jsonPath("$.FeedbackID").value(1)).andExpect(jsonPath("$.KorisnikID").value(1))
+                .andExpect(jsonPath("$.NaplataID").value(2)).andExpect(jsonPath("$.Ocjena").value(5))
+                .andExpect(jsonPath("$.Komentar").value("Zadovoljan korisnik"));
 
-	}
+    }
 
 }

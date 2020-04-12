@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface PaymentMethodService {
     PaymentMethod get(int id);
+
     void save(PaymentMethod paymentMethod);
+
     void delete(int id);
 
     List<PaymentMethod> getByType(int id);

@@ -6,8 +6,11 @@ import java.util.List;
 
 public interface CartService {
     List<Cart> get();
+
     Cart get(int id);
+
     void save(Cart cart);
+
     void delete(int id);
 
     List<Cart> getByPayment(int id);

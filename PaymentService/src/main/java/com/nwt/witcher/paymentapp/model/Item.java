@@ -9,12 +9,13 @@ import java.util.Date;
 @Entity
 @Table(name = "items")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class Item {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer itemId;
 
     private double total;

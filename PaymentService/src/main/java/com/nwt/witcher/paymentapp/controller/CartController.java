@@ -15,7 +15,7 @@ public class CartController {
     private CartService cartService;
 
     @GetMapping("/cart/payment/{id}")
-    public List<Cart> getByPayment(@PathVariable int id){
+    public List<Cart> getByPayment(@PathVariable int id) {
         return cartService.getByPayment(id);
     }
 
@@ -28,16 +28,18 @@ public class CartController {
     @GetMapping("/cart/{id}")
     public Cart get(@PathVariable int id) {
         Cart cart = cartService.get(id);
-        if(cart == null) {
-            throw new RuntimeException("Naplata sa id-om:"+id+"nije pronađena");
+        if (cart == null) {
+            throw new RuntimeException("Naplata sa id-om:" + id + "nije pronađena");
         }
         return cart;
     }
+
     @DeleteMapping("/cart/{id}")
     public String delete(@PathVariable int id) {
         cartService.delete(id);
-        return "Naplata je obrisana sa id-om:"+id;
+        return "Naplata je obrisana sa id-om:" + id;
     }
+
     @PutMapping("/cart")
     public Cart update(@RequestBody Cart cart) {
         cartService.save(cart);

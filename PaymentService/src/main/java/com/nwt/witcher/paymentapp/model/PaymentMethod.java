@@ -10,20 +10,21 @@ import java.util.UUID;
 @Entity
 @Table(name = "payment_methods")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class PaymentMethod {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer paymentMethodId;
 
-    @ManyToOne(fetch = FetchType.EAGER,targetEntity = PaymentType.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = PaymentType.class)
     @JoinColumn(name = "payment_type_id")
     private PaymentType paymentType;
 
-    @Column(name = "payment_type_id",insertable = false, updatable = false)
+    @Column(name = "payment_type_id", insertable = false, updatable = false)
     private Integer paymentTypeId;
 
     private String accountNumber;

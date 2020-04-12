@@ -1,6 +1,7 @@
 package com.nwt.witcher.paymentapp.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,39 +19,41 @@ import com.nwt.witcher.paymentapp.service.SalesItemService;
 @RequestMapping("/api")
 public class SalesItemController {
 
-	@Autowired
-	private SalesItemService salesItemService;
-	
-	@GetMapping("/stavkaProdaje")
-	public List<SalesItem> get(){
-		return salesItemService.get();
-	}
-	
-	@PostMapping("/stavkaProdaje")	
-	public SalesItem save(@RequestBody SalesItem salesItemObj) {
-		salesItemService.save(salesItemObj);
-		return salesItemObj;
-	}
-	
-	@GetMapping("/stavkaProdaje/{id}")
-	public SalesItem get(@PathVariable int id) {
-		SalesItem salesItemObj = salesItemService.get(id);
-		if(salesItemObj == null) {
-			throw new RuntimeException("Stavka prodaje sa id-om:"+id+"nije pronađena");
-		}
-		return salesItemObj;
-	}
-	@DeleteMapping("/stavkaProdaje/{id}")
-	public String delete(@PathVariable int id) {
-		salesItemService.delete(id);
-		return "Stavka prodaje je obrisan sa id-om:"+id;
-	}
-	@PutMapping("/stavkaProdaje")
-	public SalesItem update(@RequestBody SalesItem salesItemObj) {
+    @Autowired
+    private SalesItemService salesItemService;
 
-		salesItemService.save(salesItemObj);
-		return salesItemObj;
-	}
+    @GetMapping("/stavkaProdaje")
+    public List<SalesItem> get() {
+        return salesItemService.get();
+    }
+
+    @PostMapping("/stavkaProdaje")
+    public SalesItem save(@RequestBody SalesItem salesItemObj) {
+        salesItemService.save(salesItemObj);
+        return salesItemObj;
+    }
+
+    @GetMapping("/stavkaProdaje/{id}")
+    public SalesItem get(@PathVariable int id) {
+        SalesItem salesItemObj = salesItemService.get(id);
+        if (salesItemObj == null) {
+            throw new RuntimeException("Stavka prodaje sa id-om:" + id + "nije pronađena");
+        }
+        return salesItemObj;
+    }
+
+    @DeleteMapping("/stavkaProdaje/{id}")
+    public String delete(@PathVariable int id) {
+        salesItemService.delete(id);
+        return "Stavka prodaje je obrisan sa id-om:" + id;
+    }
+
+    @PutMapping("/stavkaProdaje")
+    public SalesItem update(@RequestBody SalesItem salesItemObj) {
+
+        salesItemService.save(salesItemObj);
+        return salesItemObj;
+    }
 //	@RequestMapping(value = "/stavkaProdaje", method = RequestMethod.GET)
 //	public StavkaProdaje firstPage() {
 //
@@ -62,5 +65,5 @@ public class SalesItemController {
 //
 //		return stavkaProdaje;
 //	}
-	
+
 }

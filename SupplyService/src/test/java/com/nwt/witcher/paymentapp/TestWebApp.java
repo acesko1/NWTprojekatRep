@@ -15,31 +15,32 @@ import org.springframework.web.context.WebApplicationContext;
 
 public class TestWebApp extends SupplyServiceApplicationTests {
 
-	@Autowired
-	private WebApplicationContext webApplicationContext;
+    @Autowired
+    private WebApplicationContext webApplicationContext;
 
-	private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-	@Before
-	public void setup() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-	}
+    @Before
+    public void setup() {
+        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    }
 
-	@Test
-	public void testProizvod() throws Exception {
-		mockMvc.perform(get("/proizvod")).andExpect(status().isOk())
-				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andExpect(jsonPath("$.ProizvodID").value(1)).andExpect(jsonPath("$.Cijena").value(10.00))
-				.andExpect(jsonPath("$.Naziv").value("Proizvod")).andExpect(jsonPath("$.RaspolozivaKolicina").value(100));
+    @Test
+    public void testProizvod() throws Exception {
+        mockMvc.perform(get("/proizvod")).andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(jsonPath("$.ProizvodID").value(1)).andExpect(jsonPath("$.Cijena").value(10.00))
+                .andExpect(jsonPath("$.Naziv").value("Proizvod")).andExpect(jsonPath("$.RaspolozivaKolicina").value(100));
 
-	}
-	@Test
-	public void testStavkaProdaje() throws Exception {
-		mockMvc.perform(get("/stavkaProdaje")).andExpect(status().isOk())
-				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andExpect(jsonPath("$.ProizvodID").value(1)).andExpect(jsonPath("$.Kolicina").value(50))
-				.andExpect(jsonPath("$.StavkaProdajeID").value(1)).andExpect(jsonPath("$.UkupnaCijena").value(500.00));
+    }
 
-	}
+    @Test
+    public void testStavkaProdaje() throws Exception {
+        mockMvc.perform(get("/stavkaProdaje")).andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(jsonPath("$.ProizvodID").value(1)).andExpect(jsonPath("$.Kolicina").value(50))
+                .andExpect(jsonPath("$.StavkaProdajeID").value(1)).andExpect(jsonPath("$.UkupnaCijena").value(500.00));
+
+    }
 
 }

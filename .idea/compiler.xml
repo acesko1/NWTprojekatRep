@@ -7,22 +7,39 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
+      <profile name="Annotation profile for paymentapp" enabled="true">
+        <sourceOutputDir name="../EurekaService/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../EurekaService/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AuthorizationService" target="1.8" />
+      <module name="DiscoveryServer" target="1.8" />
+      <module name="FeedbackService" target="1.8" />
+      <module name="paymentapp (1)" target="1.8" />
+      <module name="paymentapp (2)" target="1.8" />
+      <module name="PaymentService" target="1.8" />
       <module name="springbootcrudapi" target="1.8" />
       <module name="springbootcrudapi (1)" target="1.8" />
-      <module name="springbootcrudapi (2)" target="1.8" />
       <module name="springbootcrudapi (3)" target="1.8" />
-      <module name="springbootcrudapi (4)" target="1.8" />
+      <module name="SupplyService" target="1.8" />
+      <module name="UserService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthorizationService" options="-parameters" />
+      <module name="DiscoveryServer" options="-parameters" />
+      <module name="FeedbackService" options="-parameters" />
+      <module name="PaymentService" options="-parameters" />
+      <module name="SupplyService" options="-parameters" />
+      <module name="UserService" options="-parameters" />
+      <module name="paymentapp (1)" options="-parameters" />
+      <module name="paymentapp (2)" options="-parameters" />
       <module name="springbootcrudapi" options="-parameters" />
       <module name="springbootcrudapi (1)" options="-parameters" />
-      <module name="springbootcrudapi (2)" options="-parameters" />
       <module name="springbootcrudapi (3)" options="-parameters" />
-      <module name="springbootcrudapi (4)" options="-parameters" />
     </option>
   </component>
 </project>

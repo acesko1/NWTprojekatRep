@@ -7,70 +7,71 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="permissions")
+@Table(name = "permissions")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Serialization happens before lazy loaded objects are loaded
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//Serialization happens before lazy loaded objects are loaded
 public class Permission {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer permissionId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer permissionId;
 
-	private String name;
+    private String name;
 
-	private String description;
+    private String description;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date created;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updated;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updated;
 
-	@PrePersist
-	protected void onCreate() {
-		created = new java.util.Date();
-	}
+    @PrePersist
+    protected void onCreate() {
+        created = new java.util.Date();
+    }
 
-	@PreUpdate
-	protected void onUpdate() {
-		updated = new Date();
-	}
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
+    }
 
-	public Permission(){
+    public Permission() {
 
-	}
+    }
 
-	public Integer getPermissionId() {
-		return permissionId;
-	}
+    public Integer getPermissionId() {
+        return permissionId;
+    }
 
-	public void setPermissionId(Integer permissionId) {
-		this.permissionId = permissionId;
-	}
+    public void setPermissionId(Integer permissionId) {
+        this.permissionId = permissionId;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public Date getUpdated() {
-		return updated;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

@@ -41,6 +41,6 @@ public class ItemServiceImpl implements ItemService {
     @Transactional
     @Override
     public List<Item> getByCart(int id) {
-       return itemRepository.getAllByCartId(id);
+        return itemRepository.getAllByCartId(id);
     }
 }

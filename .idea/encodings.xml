@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/KorisnickiServisPravi/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/autorizacijskiServis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/feedbackServis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/feedbackServis/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/naplataServis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/zaliheServis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthorizationService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthorizationService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DiscoveryServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DiscoveryServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedbackService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PaymentService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PaymentService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SupplyService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SupplyService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserService/src/main/resources" charset="UTF-8" />
   </component>
 </project>
