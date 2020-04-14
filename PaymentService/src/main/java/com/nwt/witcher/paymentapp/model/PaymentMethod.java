@@ -54,4 +54,88 @@ public class PaymentMethod {
     protected void onUpdate() {
         updated = new Date();
     }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Integer getPaymentMethodId() {
+        return paymentMethodId;
+    }
+
+    public void setPaymentMethodId(Integer paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
+    }
+
+    public PaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public Integer getPaymentTypeId() {
+        return paymentTypeId;
+    }
+
+    public void setPaymentTypeId(Integer paymentTypeId) {
+        this.paymentTypeId = paymentTypeId;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public int getExpirationMonth() {
+        return expirationMonth;
+    }
+
+    public void setExpirationMonth(int expirationMonth) {
+        this.expirationMonth = expirationMonth;
+    }
+
+    public int getExpirationYear() {
+        return expirationYear;
+    }
+
+    public void setExpirationYear(int expirationYear) {
+        this.expirationYear = expirationYear;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getUserCode() {
+        return userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
 }

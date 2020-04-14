@@ -22,18 +22,18 @@ public class SalesItemController {
     @Autowired
     private SalesItemService salesItemService;
 
-    @GetMapping("/stavkaProdaje")
+    @GetMapping("/sales-item")
     public List<SalesItem> get() {
         return salesItemService.get();
     }
 
-    @PostMapping("/stavkaProdaje")
+    @PostMapping("/sales-item")
     public SalesItem save(@RequestBody SalesItem salesItemObj) {
         salesItemService.save(salesItemObj);
         return salesItemObj;
     }
 
-    @GetMapping("/stavkaProdaje/{id}")
+    @GetMapping("/sales-item/{id}")
     public SalesItem get(@PathVariable int id) {
         SalesItem salesItemObj = salesItemService.get(id);
         if (salesItemObj == null) {
@@ -42,28 +42,16 @@ public class SalesItemController {
         return salesItemObj;
     }
 
-    @DeleteMapping("/stavkaProdaje/{id}")
+    @DeleteMapping("/sales-item/{id}")
     public String delete(@PathVariable int id) {
         salesItemService.delete(id);
         return "Stavka prodaje je obrisan sa id-om:" + id;
     }
 
-    @PutMapping("/stavkaProdaje")
+    @PutMapping("/sales-item")
     public SalesItem update(@RequestBody SalesItem salesItemObj) {
 
         salesItemService.save(salesItemObj);
         return salesItemObj;
     }
-//	@RequestMapping(value = "/stavkaProdaje", method = RequestMethod.GET)
-//	public StavkaProdaje firstPage() {
-//
-//		StavkaProdaje stavkaProdaje = new StavkaProdaje();
-//		stavkaProdaje.setKolicina(50);
-//		stavkaProdaje.setProizvodID(1);
-//		stavkaProdaje.setStavkaProdajeID(1);
-//		stavkaProdaje.setUkupnaCijena(500.00);
-//
-//		return stavkaProdaje;
-//	}
-
 }

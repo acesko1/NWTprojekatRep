@@ -22,18 +22,18 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/proizvod")
+    @GetMapping("/product")
     public List<Product> get() {
         return productService.get();
     }
 
-    @PostMapping("/proizvod")
-    public Product save(@RequestBody Product productObj) {
-        productService.save(productObj);
-        return productObj;
+    @PostMapping("/product")
+    public Product save(@RequestBody Product product) {
+        productService.save(product);
+        return product;
     }
 
-    @GetMapping("/proizvod/{id}")
+    @GetMapping("/product/{id}")
     public Product get(@PathVariable int id) {
         Product productObj = productService.get(id);
         if (productObj == null) {
@@ -42,27 +42,16 @@ public class ProductController {
         return productObj;
     }
 
-    @DeleteMapping("/proizvod/{id}")
+    @DeleteMapping("/product/{id}")
     public String delete(@PathVariable int id) {
         productService.delete(id);
         return "Proizvod je obrisan sa id-om:" + id;
     }
 
-    @PutMapping("/proizvod")
-    public Product update(@RequestBody Product productObj) {
-        productService.save(productObj);
-        return productObj;
+    @PutMapping("/product")
+    public Product update(@RequestBody Product product) {
+        productService.save(product);
+        return product;
     }
-//	@RequestMapping(value = "/proizvod", method = RequestMethod.GET)
-//	public Proizvod firstPage() {
-//
-//		Proizvod proizvod = new Proizvod();
-//		proizvod.setCijena(10.00);
-//		proizvod.setNaziv("Proizvod");
-//		proizvod.setProizvodID(1);
-//		proizvod.setRaspolozivaKolicina(100);
-//
-//		return proizvod;
-//	}
 
 }

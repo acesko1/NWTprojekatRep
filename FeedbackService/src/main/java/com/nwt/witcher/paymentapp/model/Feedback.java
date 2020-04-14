@@ -18,7 +18,7 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer feedbackId;
 
-    private Integer userId;
+    private Integer userCode;
 
     private Integer paymentCode;
 
@@ -53,12 +53,12 @@ public class Feedback {
         this.feedbackId = feedbackId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUserCode() {
+        return userCode;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserCode(Integer userId) {
+        this.userCode = userId;
     }
 
     public Integer getRating() {

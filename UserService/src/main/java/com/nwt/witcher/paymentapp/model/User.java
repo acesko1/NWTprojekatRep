@@ -43,8 +43,6 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updated;
 
-    private String creditCardNumber;
-
     public User() {
 
     }
@@ -91,15 +89,6 @@ public class User {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
-
-    public String getCreditCardNumber() {
-        return creditCardNumber;
-    }
-
-    public void setCreditCardNumber(String creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
-    }
-
 
     public Date getCreated() {
         return created;

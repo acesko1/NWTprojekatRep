@@ -22,10 +22,10 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @GetMapping("/payment")
-    public List<Payment> get() {
-        return paymentService.get();
-    }
+//    @GetMapping("/payment")
+//    public List<Payment> get() {
+//        return paymentService.get();
+//    }
 
     @GetMapping("/payment/method/{id}")
     public List<Payment> getByMethod(@PathVariable int id) {
