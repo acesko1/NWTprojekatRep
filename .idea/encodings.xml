@@ -2,15 +2,15 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/AuthorizationService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/AuthorizationService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DiscoveryServer/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/DiscoveryServer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FeedbackService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedbackService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PaymentService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/PaymentService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Prodavnica-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SupplyService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/SupplyService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UserService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UserService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/grpcServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/grpcServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jwt_token_implementacijaAutentifikacijeAutorizacije/src/main/java" charset="UTF-8" />
   </component>
 </project>

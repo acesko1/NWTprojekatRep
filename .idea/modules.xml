@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AuthorizationService/AuthorizationService.iml" filepath="$PROJECT_DIR$/AuthorizationService/AuthorizationService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DiscoveryServer/DiscoveryServer.iml" filepath="$PROJECT_DIR$/DiscoveryServer/DiscoveryServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FeedbackService/FeedbackService.iml" filepath="$PROJECT_DIR$/FeedbackService/FeedbackService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PaymentService/PaymentService.iml" filepath="$PROJECT_DIR$/PaymentService/PaymentService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SupplyService/SupplyService.iml" filepath="$PROJECT_DIR$/SupplyService/SupplyService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UserService/UserService.iml" filepath="$PROJECT_DIR$/UserService/UserService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NWTprojekatRep.iml" filepath="$PROJECT_DIR$/.idea/NWTprojekatRep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prodavnica-gateway/Prodavnica-gateway.iml" filepath="$PROJECT_DIR$/Prodavnica-gateway/Prodavnica-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grpcServer/grpcDemo.iml" filepath="$PROJECT_DIR$/grpcServer/grpcDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jwt_token_implementacijaAutentifikacijeAutorizacije/jwt-security.iml" filepath="$PROJECT_DIR$/jwt_token_implementacijaAutentifikacijeAutorizacije/jwt-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserService/paymentapp.iml" filepath="$PROJECT_DIR$/UserService/paymentapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SupplyService/paymentapp (1).iml" filepath="$PROJECT_DIR$/SupplyService/paymentapp (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/PaymentService/paymentapp (2).iml" filepath="$PROJECT_DIR$/PaymentService/paymentapp (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/DiscoveryServer/paymentapp (3).iml" filepath="$PROJECT_DIR$/DiscoveryServer/paymentapp (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/FeedbackService/paymentapp (4).iml" filepath="$PROJECT_DIR$/FeedbackService/paymentapp (4).iml" />
+      <module fileurl="file://$PROJECT_DIR$/AuthorizationService/paymentapp (5).iml" filepath="$PROJECT_DIR$/AuthorizationService/paymentapp (5).iml" />
     </modules>
   </component>
 </project>
