@@ -6,20 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UserService" />
+        <module name="eureka-service" />
         <module name="Prodavnica-gateway" />
         <module name="SupplyService" />
-        <module name="DiscoveryService" />
+        <module name="UserService" />
+        <module name="PaymentService" />
         <module name="AuthorizationService" />
         <module name="grpcDemo" />
         <module name="FeedbackService" />
         <module name="jwt-security" />
-        <module name="PaymentService" />
+        <module name="DiscoveryService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AuthorizationService" target="1.8" />
       <module name="DiscoveryService" target="1.8" />
+      <module name="eureka-service" target="1.8" />
       <module name="FeedbackService" target="1.8" />
       <module name="grpcDemo" target="1.8" />
       <module name="jwt-security" target="1.8" />

@@ -27,7 +27,31 @@
 			<artifactId>grpc-stub</artifactId>
 			<version>1.15.1</version>
 		</dependency>
-	</dependencies>
+      <dependency>
+          <groupId>com.nwt.witcher</groupId>
+          <artifactId>paymentapp</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.nwt.witcher</groupId>
+          <artifactId>paymentapp</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.nwt.witcher</groupId>
+          <artifactId>paymentapp</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.nwt.witcher</groupId>
+          <artifactId>paymentapp</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+  </dependencies>
 
 		<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

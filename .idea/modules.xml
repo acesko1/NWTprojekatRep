@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/Prodavnica-gateway/Prodavnica-gateway.iml" filepath="$PROJECT_DIR$/Prodavnica-gateway/Prodavnica-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/SupplyService/SupplyService.iml" filepath="$PROJECT_DIR$/SupplyService/SupplyService.iml" />
       <module fileurl="file://$PROJECT_DIR$/UserService/UserService.iml" filepath="$PROJECT_DIR$/UserService/UserService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/grpcServer/grpcDemo.iml" filepath="$PROJECT_DIR$/grpcServer/grpcDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt_token_implementacijaAutentifikacijeAutorizacije/jwt-security.iml" filepath="$PROJECT_DIR$/jwt_token_implementacijaAutentifikacijeAutorizacije/jwt-security.iml" />
     </modules>

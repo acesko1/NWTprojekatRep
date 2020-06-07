@@ -1,8 +1,8 @@
 import java.io.IOException;
 
+import com.nwt.witcher.paymentapp.AuthorizationServiceApplication;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import user.UserService;
 
 public class GrpcServer {
 
