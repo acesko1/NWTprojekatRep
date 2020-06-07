@@ -18,6 +18,8 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cartId;
 
+    private String name;
+
     private double total;
 
     private int quantity;
@@ -94,5 +96,13 @@ public class Cart {
 
     public void setPaymentId(Integer paymentId) {
         this.paymentId = paymentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

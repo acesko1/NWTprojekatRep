@@ -22,6 +22,10 @@ public class Payment {
 
     private String code;
 
+    private String name;
+
+    private String description;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
@@ -118,5 +122,21 @@ public class Payment {
 
     public void setPaymentId(Integer paymentId) {
         this.paymentId = paymentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

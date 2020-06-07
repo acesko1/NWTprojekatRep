@@ -12,4 +12,6 @@ public interface PaymentMethodService {
     void delete(int id);
 
     List<PaymentMethod> getByType(int id);
+
+    List<PaymentMethod> getByUserCode(String userCode);
 }

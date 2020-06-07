@@ -37,4 +37,8 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
     public List<PaymentMethod> getByType(int id) {
         return paymentMethodRepository.getAllByPaymentTypeId(id);
     }
+
+    @Transactional
+    @Override
+    public List<PaymentMethod> getByUserCode(String userCode){ return paymentMethodRepository.getAllByUserCode(userCode);}
 }
